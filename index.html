@@ -9,7 +9,6 @@
 
   <style>
 
-    /* background color */
     body {
       background-color: #1E1E1E;
       color: #FFFFFF;
@@ -18,7 +17,7 @@
       padding: 0;
     }
 
-    /* navigation bar */
+  
     nav {
       background-color: #0A0A0A;
       padding: 15px 40px;
@@ -47,13 +46,11 @@
       letter-spacing: 5px;
     }
 
-    /* sections */
     section {
       padding: 80px 40px;
       border-bottom: 1px solid #E0C991;
     }
 
-    /* home section */
     #home {
       display: flex;
       justify-content: space-between;
@@ -82,7 +79,6 @@
       letter-spacing: 3px;
     }
 
-    /* profile photo */
     .home-photo img {
       width: 220px;
       height: 220px;
@@ -100,7 +96,6 @@
       font-family: 'Anybody', sans-serif;
     }
 
-    /* bottom cards in home */
     .home-cards {
       display: flex;
       border: 1px solid #E0C991;
@@ -120,7 +115,6 @@
       border-right: none;
     }
 
-    /* about section */
     #about h2 {
       font-family: 'Bodoni Moda', serif;
       font-size: 42px;
@@ -136,28 +130,35 @@
       margin-bottom: 20px;
     }
 
-    /* skills section */
     #skills h2 {
       font-family: 'Bodoni Moda', serif;
       font-size: 42px;
       color: #E0C991;
-      text-align: center;
       margin-bottom: 50px;
     }
 
     .skill-block {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 40px;
       margin-bottom: 60px;
       padding-bottom: 60px;
       border-bottom: 1px solid #E0C991;
-      gap: 40px;
     }
 
     .skill-block:last-child {
       border-bottom: none;
       margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .skill-block.flip {
+      flex-direction: row-reverse;
+    }
+
+    .skill-info {
+      flex: 1;
     }
 
     .skill-info h3 {
@@ -171,7 +172,6 @@
       font-size: 15px;
       line-height: 1.8;
       color: #A3A3A3;
-      max-width: 380px;
     }
 
     .skill-info p strong {
@@ -179,19 +179,80 @@
     }
 
     .skill-images {
+      flex: 1;
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
       justify-content: center;
     }
 
     .skill-images img {
-      width: 180px;
-      border-radius: 10px;
+      width: 160px;
       border: 1px solid #E0C991;
     }
 
-    /* contact section */
+    #client h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 42px;
+      color: #E0C991;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .client-box {
+      border: 1px solid #E0C991;
+      overflow: hidden;
+      width: fit-content;
+      margin: 0 auto;
+      max-height: 450px;
+    }
+
+    .client-stack {
+      display: flex;
+      flex-direction: column;
+      animation: slideDown 16s ease-in-out infinite;
+    }
+
+    .client-slide {
+      flex-shrink: 0;
+      line-height: 0;
+    }
+
+    .client-slide img {
+      display: block;
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .client-slide p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 10px 20px;
+      background-color: rgba(10, 10, 10, 0.80);
+      border-top: 1px solid #E0C991;
+      font-family: 'Anybody', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #E0C991;
+    }
+
+    /* AI */
+    @keyframes slideDown {
+      0%    { transform: translateY(0); }
+      21%   { transform: translateY(0); }
+      25%   { transform: translateY(-450px); }
+      46%   { transform: translateY(-450px); }
+      50%   { transform: translateY(-900px); }
+      71%   { transform: translateY(-900px); }
+      75%   { transform: translateY(-1350px); }
+      96%   { transform: translateY(-1350px); }
+      100%  { transform: translateY(0); }
+    }
+
     #contact {
       text-align: center;
     }
@@ -217,6 +278,7 @@
       gap: 12px;
       padding: 25px 35px;
       border-right: 1px solid #E0C991;
+      text-decoration: none;
     }
 
     .contact-card:last-child {
@@ -234,7 +296,6 @@
       color: #A3A3A3;
     }
 
-    /* footer */
     footer {
       text-align: center;
       padding: 35px;
@@ -252,7 +313,6 @@
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <div>
       <a href="#home">Home</a>
@@ -265,25 +325,18 @@
     </div>
   </nav>
 
-
-  <!-- HOME -->
   <section id="home">
-
     <div class="home-text">
       <h1>Ligon</h1>
       <h2>I am Developer</h2>
       <p>UI Designer / Developer</p>
     </div>
-
     <div class="home-photo">
-      <!-- Replace src with your actual photo path -->
       <img src="1d28414f-a869-482a-9f22-4f13151f7b38.jfif" alt="Ligon Photo" />
       <p>BS INFORMATION TECHNOLOGY</p>
     </div>
-
   </section>
 
-  <!-- HOME BOTTOM CARDS -->
   <div class="home-cards">
     <div class="card">
       Look through a list of notable works, personally selected by my creation to find new insights.
@@ -296,8 +349,6 @@
     </div>
   </div>
 
-
-  <!-- ABOUT -->
   <section id="about">
     <h2>— About Me ✦</h2>
     <p>
@@ -308,79 +359,93 @@
     </p>
   </section>
 
-
-  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
 
-    <!-- Skill 1 -->
+
     <div class="skill-block">
       <div class="skill-info">
-        <h3>● UI/UX Design</h3>
+        <h3>● Lab Activity #1 – Song Lyrics</h3>
         <p>
-          Project About <strong>CAMPFIT</strong> is an android device website for improving online selling campus outfits. Like showcasing Campus product, update for uniform availability.
+          A lab exercise focused on <strong>structuring and styling song lyrics</strong> using HTML and CSS. Practises text layout, line breaks, verse and chorus separation, and basic typographic hierarchy.
         </p>
       </div>
       <div class="skill-images">
-        <!-- Replace with your actual image paths -->
-        <img src="Capture 1.PNG" alt="CampusFit Screen 1" />
-        <img src="Capture2.PNG" alt="CampusFit Screen 2" />
-        <img src="Logo2.PNG" alt="CampusFit Logo" />
+        <img src="Act1.PNG" alt="Song Lyrics Screenshot 1" />
       </div>
     </div>
 
-    <!-- Skill 2 -->
-    <div class="skill-block">
-      <div class="skill-images">
-        <!-- Replace with your actual image paths -->
-        <img src="Logo1.PNG" alt="JavaCadamy Logo" />
-        <img src="JavAcademy.PNG" alt="JavaCadamy Screenshots" />
-      </div>
+    <div class="skill-block flip">
       <div class="skill-info">
-        <h3>● Figma &amp; Prototyping</h3>
+        <h3>● Lab Activity #2 – Resume</h3>
         <p>
-          Project About <strong>JavaCadamy</strong> Its about Java learning where you can learn to code and game killing virus this sure to help to learn basic java.
+          A lab activity building a <strong>structured personal resume</strong> in HTML. Organises sections like About Me, Education, Skills, and Experience using semantic tags and clean layout.
         </p>
+      </div>
+      <div class="skill-images">
+        <img src="Act2.PNG" alt="Resume Screenshot 1" />
+      </div>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-info">
+        <h3>● Lab Activity #3 – Lists</h3>
+        <p>
+          A lab exercise exploring <strong>HTML list elements</strong> — ordered, unordered, and nested — applied through a Lumpia recipe format. Practises list structure and content organisation.
+        </p>
+      </div>
+      <div class="skill-images">
+        <img src="Act3.PNG" alt="Lists Screenshot 1" />
       </div>
     </div>
 
   </section>
 
+  /* AI */
+  <section id="client">
+    <h2>Client</h2>
 
-  <!-- CONTACT -->
-<section id="contact">
+    <div class="client-box">
+      <div class="client-stack">
 
-  <h2 class="contact-heading">Contact Info</h2>
+        <div class="client-slide">
+          <img src="Client1.PNG" alt="Aetheria Home" />
+        </div>
 
-  <div class="contact-row">
+        <div class="client-slide">
+          <img src="Client2.PNG" alt="Aetheria About" />
+        </div>
 
-    <a href="https://github.com/adrianeligon3-max" target="_blank" rel="noopener" class="contact-card">
-      <div class="contact-icon">
+        <div class="client-slide">
+          <img src="Client3.PNG" alt="Aetheria Skills" />
+        </div>
+
+        <div class="client-slide">
+          <img src="Client4.PNG" alt="Aetheria Contact" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Info</h2>
+    <div class="contact-row">
+      <a href="https://github.com/adrianeligon3-max" target="_blank" rel="noopener" class="contact-card">
         <i class="fa-brands fa-github"></i>
-      </div>
-      <span class="contact-label">adrianeligon3-max</span>
-    </a>
-
-    <div class="contact-card">
-      <div class="contact-icon">
+        <span>adrianeligon3-max</span>
+      </a>
+      <div class="contact-card">
         <i class="fa-solid fa-envelope"></i>
+        <span>adrianeligon3@gmail.com</span>
       </div>
-      <span class="contact-label">adrianeligon3@gmail.com</span>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-icon">
+      <div class="contact-card">
         <i class="fa-solid fa-phone"></i>
+        <span>09810344970</span>
       </div>
-      <span class="contact-label">adrianeligon3@gmail.com</span>
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-  <!-- FOOTER -->
   <footer>
     <p>THANK YOU FOR YOUR TIME</p>
   </footer>
